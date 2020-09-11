@@ -23,7 +23,7 @@ public class DrawPanel extends JPanel {
             stars[i].draw((Graphics2D) g);
         }
 
-        SpaceShip spaceShip = new SpaceShip();
+        SpaceShip spaceShip = new SpaceShip(100,120);
         spaceShip.draw((Graphics2D) g);
 //        g.setColor(Color.RED);
 //        g.drawLine(100, 50, 150, 200);
