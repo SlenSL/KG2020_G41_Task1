@@ -10,19 +10,65 @@ public class TieFighter implements Drawable {
     @Override
     public void draw(Graphics2D g) {
 
-        /**************************** Темные детали корпуса *****************************/
+        /*************************** Нижний слой ***************************/
+        g.setColor(new Color(64, 58, 42));//темный цвет
+
+        g.fillRect((int) (x + width / 10),
+                (int) (y + width / 3 + (width / 3 - width / 8) / 2), (int) (9 * width / 10), (int) width / 8);//ось корпуса
 
 
+        g.setColor(new Color(201, 201, 193));//контур
+
+        g.drawOval((int) (x + width / 20 + width / 2 - width / 3),
+                (int) (y + width / 3 + (width / 3 - width / 4) / 2), (int) (2 * width / 3), (int) width / 4);//расширение кабины
+        g.drawRect((int) (x + width / 10),
+                (int) (y + width / 3 + (width / 3 - width / 8) / 2), (int) (9 * width / 10), (int) width / 8);//ось корпуса
         /*************************** Светлые детали корпуса ***************************/
 
+        g.setColor(new Color(110, 100, 70));//светлый цвет
+
+        g.fillPolygon(new int[]{x, (int) (x + width / 20), (int) (x + width / 10), (int) (x + width / 20)},
+                new int[]{(int) (y + width / 2), y, (int) (y + width / 2), (int) (y + width)}, 4);//левое крыло
+
+        g.fillPolygon(new int[]{x + (int) width, (int) (x + 21 * width / 20), (int) (x + 11 * width / 10), (int) (x + 21 * width / 20)},
+                new int[]{(int) (y + width / 2), y, (int) (y + width / 2), (int) (y + width)}, 4);//правое крыло
+
+        g.fillOval((int) (x + width / 20 + width / 2 - width / 3),
+                (int) (y + width / 3 + (width / 3 - width / 4) / 2), (int) (2 * width / 3), (int) width / 4);//расширение кабины
+
+
+        /**************************** Темные детали корпуса *****************************/
+
+        g.setColor(new Color(64, 58, 42));//темный цвет
+
+
+        g.fillRoundRect((int) (x + width / 20 + width / 2 - width / 6), (int) (y + width / 3),
+                (int) width / 3, (int) width / 3, (int) width / 4, (int) width / 2);//кабина
+
+        /************************** Иллюминатор **************************/
+
+        g.setColor(new Color(153, 204, 207));//светло-голубой цвет
+
+        g.fillRoundRect((int) (x + width / 20 + width / 2 - width / 8), (int) (y + width / 3 + (width / 3 - width / 4) / 2),
+                (int) width / 4, (int) width / 4, (int) width / 5, (int) width / 3);//иллюминатор
+
         /************************** Контур корпуса **************************/
-        g.setColor(new Color(166, 243, 247));//светло-голубой цвет
-        g.drawRect(x,y,(int)width/10,(int) width);//левое крыло
-        g.drawRect((int) width,y,(int) width/10,(int) width);//правое крыло
-        g.drawRoundRect((int)( x + width/2 - width/3),(int) (y - 2*width/3),(int) width/3 ,(int) width/3, (int) width/3,(int) width/3);
-        g.drawPolygon(new int[]{x, x, x + 150, x + 300, x + 300, x + 150}, new int[]{y + 90, y + 80, y + 50, y + 80, y + 90, y + 120}, 6);//главный корпус
+
+        g.setColor(new Color(201, 201, 193));//контур
+
+        g.drawPolygon(new int[]{x, (int) (x + width / 20), (int) (x + width / 10), (int) (x + width / 20)},
+                new int[]{(int) (y + width / 2), y, (int) (y + width / 2), (int) (y + width)}, 4);//левое крыло
+
+        g.drawPolygon(new int[]{x + (int) width, (int) (x + 21 * width / 20), (int) (x + 11 * width / 10), (int) (x + 21 * width / 20)},
+                new int[]{(int) (y + width / 2), y, (int) (y + width / 2), (int) (y + width)}, 4);//правое крыло
+
+        g.drawRoundRect((int) (x + width / 20 + width / 2 - width / 6), (int) (y + width / 3),
+                (int) width / 3, (int) width / 3, (int) width / 4, (int) width / 2);//кабина
 
 
+
+        g.drawRoundRect((int) (x + width / 20 + width / 2 - width / 8), (int) (y + width / 3 + (width / 3 - width / 4) / 2),
+                (int) width / 4, (int) width / 4, (int) width / 5, (int) width / 3);//иллюминатор
     }
 
     public TieFighter(int x, int y, int width) {
