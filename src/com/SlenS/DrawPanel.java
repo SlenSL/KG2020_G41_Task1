@@ -11,10 +11,12 @@ public class DrawPanel extends JPanel {
     public void paint(Graphics g) {
         super.paint(g);
 
-        Backgound backgound = new Backgound(800,600, 200);
+        Backgound backgound = new Backgound(800,600, 400, 10);
         backgound.draw((Graphics2D) g);
-        SpaceShip spaceShip = new SpaceShip(220,180);
-        spaceShip.draw((Graphics2D) g);
+
+        ImperialDestroyer imperialDestroyer = new ImperialDestroyer(220,180);
+        imperialDestroyer.draw((Graphics2D) g);
+
 
     }
 
